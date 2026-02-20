@@ -60,10 +60,10 @@ const Footer = () => {
               <a href="https://www.instagram.com/jaydthewealthycowboy?igsh=NG9nam16azd4bHVz&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="Instagram">
                 <Instagram size={32} />
               </a>
-              <a href="#" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/1Ab3vZoa3d/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="Facebook">
                 <Facebook size={32} />
               </a>
-              <a href="#" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/jaderryous-franklin-6890883b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="LinkedIn">
                 <Linkedin size={32} />
               </a>
             </div>
