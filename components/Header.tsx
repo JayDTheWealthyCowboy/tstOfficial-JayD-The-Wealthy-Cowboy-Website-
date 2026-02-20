@@ -50,58 +50,60 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        isScrolled
-          ? "bg-depth-1/80 backdrop-blur-md border-gold-primary/30 py-4 shadow-xl"
-          : "bg-transparent border-transparent py-6"
-      )}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo — smaller on mobile */}
-        <Link href="/" className="flex items-center">
-          <img
-            src="/logo.PNG"
-            alt="JayD The Wealthy Cowboy™"
-            className="h-14 md:h-40 w-auto object-contain hover:opacity-80 transition-opacity"
-          />
-        </Link>
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+          isScrolled
+            ? "bg-depth-1/80 backdrop-blur-md border-gold-primary/30 py-4 shadow-xl"
+            : "bg-transparent border-transparent py-6"
+        )}
+      >
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          {/* Logo — smaller on mobile */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="/logo.PNG"
+              alt="JayD The Wealthy Cowboy™"
+              className="h-14 md:h-40 w-auto object-contain hover:opacity-80 transition-opacity"
+            />
+          </Link>
 
-        {/* Desktop nav links */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="font-inter text-sm uppercase tracking-widest text-white/70 hover:text-gold-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop nav links */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="font-inter text-sm uppercase tracking-widest text-white/70 hover:text-gold-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Desktop CTA — hidden on mobile */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <Button variant="primary" size="md" href="/schedule">
-            GET A FREE CREDIT CONSULTATION
-          </Button>
+          {/* Desktop CTA — hidden on mobile */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Button variant="primary" size="md" href="/schedule">
+              GET A FREE CREDIT CONSULTATION
+            </Button>
+          </div>
+
+          {/* Mobile hamburger button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden flex items-center justify-center w-10 h-10 text-white/80 hover:text-gold-primary transition-colors"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+      </header>
 
-        {/* Mobile hamburger button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden flex items-center justify-center w-10 h-10 text-white/80 hover:text-gold-primary transition-colors"
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile menu panel */}
+      {/* Mobile menu panel — outside <header> so it's not trapped in its stacking context */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 z-40 transition-all duration-300",
+          "lg:hidden fixed inset-0 z-[60] transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -151,7 +153,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 };
 
