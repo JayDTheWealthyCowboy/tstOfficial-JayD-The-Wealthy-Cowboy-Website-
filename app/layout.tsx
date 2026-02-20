@@ -21,11 +21,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000"
-  ),
+  metadataBase: new URL("https://JayDTheWealthyCowboy.ai"),
   title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
   description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
   openGraph: {
