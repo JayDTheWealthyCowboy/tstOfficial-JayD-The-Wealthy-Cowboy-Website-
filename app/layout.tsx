@@ -21,8 +21,32 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://JayDTheWealthyCowboy.ai"),
   title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
   description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+  openGraph: {
+    title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
+    description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+    images: [
+      {
+        url: "/og-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "JayD The Wealthy Cowboy™",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
+    description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+    images: ["/og-image.jpeg"],
+  },
+  icons: {
+    icon: "/logo.PNG",
+    apple: "/logo.PNG",
+  },
 };
 
 export default function RootLayout({
