@@ -6,7 +6,7 @@ export default function SchedulePage() {
         <Section className="min-h-screen pt-32 pb-20">
             <Container className="max-w-4xl text-center space-y-12">
                 <div className="space-y-6">
-                    <h1 className="text-4xl md:text-6xl text-white">BOOK YOUR FREE CREDIT CONSULTATION</h1>
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">BOOK YOUR FREE CREDIT CONSULTATION</h1>
                     <p className="text-text-secondary font-inter text-lg max-w-2xl mx-auto leading-relaxed">
                         Complete the pre-qualification form below to pick a time that works for your consultation.
                     </p>

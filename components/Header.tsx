@@ -101,16 +101,33 @@ const Header = () => {
       {/* Mobile menu panel */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-0 z-40 bg-depth-1/95 backdrop-blur-lg transition-all duration-300",
+          "lg:hidden fixed inset-0 z-40 transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         )}
+        style={{ backgroundColor: "rgba(7, 6, 6, 0.97)" }}
       >
-        {/* Spacer to push content below the header bar */}
-        <div className="h-28" />
+        {/* Close button row */}
+        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-gold-primary/20">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <img
+              src="/logo.PNG"
+              alt="JayD The Wealthy Cowboy™"
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center gap-2 text-white/70 hover:text-gold-primary transition-colors"
+            aria-label="Close menu"
+          >
+            <X size={24} />
+            <span className="font-inter text-xs uppercase tracking-widest">Close</span>
+          </button>
+        </div>
 
-        <nav className="flex flex-col items-center space-y-6 px-6 pt-4">
+        <nav className="flex flex-col items-center space-y-6 px-6 pt-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}

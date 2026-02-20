@@ -86,7 +86,7 @@ export default function ServicesPage() {
         <div className="pb-20">
             <Section className="pt-20 pb-10">
                 <Container className="text-center">
-                    <h1 className="text-4xl md:text-6xl text-white mb-6">CREDIT TRANSFORMATION STARTS WITH CLARITY.</h1>
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">CREDIT TRANSFORMATION STARTS WITH CLARITY.</h1>
                     <p className="text-text-secondary font-inter text-lg uppercase tracking-widest">
                         Choose the path that fits your current needs.
                     </p>
