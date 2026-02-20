@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-trajan: var(--font-cinzel), "Trajan Pro", "Times New Roman", serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-gold-primary: #D4AF37;
+  --color-gold-bright: #FFD700;
+  --color-gold-light: #FFED4E;
+  --color-gold-muted: #B8941F;
+
+  --color-green-primary: #22C55E;
+  --color-green-bright: #4ADE80;
+  --color-green-light: #86EFAC;
+
+  --color-depth-1: #070606;
+  --color-depth-2: #090807;
+  --color-depth-3: #0F0D0C;
+  --color-depth-vignette: #141110;
+
+  --color-text-white: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+
+  @keyframes metallic-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes drift {
+    from {
+      transform: translateX(-10%) translateY(0);
+    }
+
+    to {
+      transform: translateX(110%) translateY(-20px);
+    }
+  }
+
+  --animate-metallic-flow: metallic-flow 3s ease infinite;
+  --animate-drift: drift 20s linear infinite;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-depth-1);
+    --foreground: var(--color-text-white);
+  }
+
+  body {
+    background-color: var(--color-depth-1);
+    color: var(--color-text-white);
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-trajan);
+    text-transform: uppercase !important;
+    letter-spacing: 0.25em !important;
+  }
+
+  h1 {
+    letter-spacing: 0.35em !important;
+  }
+}
+
+@layer utilities {
+  .bg-dimensional {
+    background: radial-gradient(circle at center, var(--color-depth-2) 0%, var(--color-depth-1) 100%);
+    position: relative;
+  }
+
+  .bg-vignette {
+    background: radial-gradient(circle at center, transparent 0%, var(--color-depth-vignette) 100%);
+    pointer-events: none;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(to right, #d4af37, #ffd700, #ffed4e, #ffd700, #d4af37);
+    background-size: 200% auto;
+  }
+
+  .green-gradient {
+    background: linear-gradient(to right, #22c55e, #4ade80, #86efac, #4ade80, #22c55e);
+    background-size: 200% auto;
+  }
+}
