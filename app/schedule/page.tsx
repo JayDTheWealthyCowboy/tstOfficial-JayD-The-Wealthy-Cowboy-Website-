@@ -15,7 +15,7 @@ export default function SchedulePage() {
                 {/* Pre-Qualification Form Embed */}
                 <div className="w-full min-h-[800px] bg-depth-vignette border border-gold-primary/20 rounded-sm overflow-hidden relative">
                     <iframe
-                        src="https://link.jdthewealthycowboy.com/widget/form/sWmDpdF77QELVETbSvIN"
+                        src="https://links.jaydthewealthycowboy.com/widget/form/sWmDpdF77QELVETbSvIN"
                         style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px', minHeight: '800px' }}
                         id="inline-sWmDpdF77QELVETbSvIN"
                         data-layout="{'id':'INLINE'}"
@@ -32,7 +32,7 @@ export default function SchedulePage() {
                         title="Credit Consulting Pre-Qualification"
                     />
                     <Script
-                        src="https://link.jdthewealthycowboy.com/js/form_embed.js"
+                        src="https://links.jaydthewealthycowboy.com/js/form_embed.js"
                         strategy="afterInteractive"
                     />
                 </div>
