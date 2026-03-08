@@ -54,28 +54,15 @@ export default function CreditVideoAnalysisPage() {
             {/* ── VSL PLACEHOLDER ──────────────────────────────────── */}
             <Section className="py-10">
                 <Container className="max-w-3xl mx-auto">
-                    <div className="relative w-full aspect-video bg-depth-vignette border border-gold-primary/20 flex items-center justify-center">
-                        {/* SWAP THIS DIV WITH YOUR LOOM/VIMEO/YOUTUBE EMBED WHEN READY */}
-                        <div className="text-center space-y-3 p-8">
-                            <div className="w-16 h-16 rounded-full border-2 border-gold-primary/50 flex items-center justify-center mx-auto">
-                                <svg className="w-6 h-6 text-gold-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </div>
-                            <p className="text-gold-primary text-xs font-bold tracking-[0.3em] uppercase">
-                                Watch — How This Works
-                            </p>
-                            <p className="text-text-secondary font-inter text-sm">
-                                Video coming soon — check back shortly.
-                            </p>
-                        </div>
-                        {/* ─── REPLACE ABOVE WITH EMBED, e.g.:
-                        <iframe
-                            src="https://www.loom.com/embed/YOUR_VIDEO_ID"
-                            className="absolute inset-0 w-full h-full"
-                            allowFullScreen
-                        />
-                        ─── */}
+                    <div className="relative w-full aspect-video bg-black border border-gold-primary/20 overflow-hidden">
+                        <video
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        >
+                            <source src="/0219.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </Container>
             </Section>
