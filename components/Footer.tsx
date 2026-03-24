@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Instagram, Facebook, Linkedin, Video } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Video, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,71 +9,83 @@ const Footer = () => {
     <footer className="relative z-10 bg-depth-vignette border-t border-gold-primary/20 pt-20 pb-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand + Contact */}
           <div className="space-y-6">
             <div className="flex flex-col">
               <img
                 src="/logo.PNG"
-                alt="JayD The Wealthy Cowboy™"
+                alt="JayD The Wealthy Cowboy\u2122"
                 className="h-32 md:h-48 w-auto object-contain self-start"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <h4 className="text-white text-xs font-bold tracking-widest uppercase">Contact</h4>
-              <div className="space-y-2 font-inter text-sm text-text-secondary">
-                <p>support@jaydthewealthycowboy.ai</p>
-                <p>903-714-1234</p>
+              <div className="space-y-2 font-inter text-sm">
+                <a href="mailto:support@jaydthewealthycowboy.ai" className="flex items-center gap-2 text-text-secondary hover:text-gold-primary transition-colors">
+                  <Mail size={14} className="text-gold-primary" />
+                  support@jaydthewealthycowboy.ai
+                </a>
+                <a href="tel:903-714-1234" className="flex items-center gap-2 text-text-secondary hover:text-gold-primary transition-colors">
+                  <Phone size={14} className="text-gold-primary" />
+                  903-714-1234
+                </a>
               </div>
             </div>
           </div>
 
+          {/* Navigation */}
           <div className="space-y-6">
             <h4 className="text-white text-xs font-bold tracking-widest uppercase">Navigation</h4>
-            <div className="grid grid-cols-1 gap-4 font-inter text-sm text-text-secondary">
+            <div className="grid grid-cols-1 gap-3 font-inter text-sm text-text-secondary">
               <Link href="/" className="hover:text-gold-primary transition-colors">Home</Link>
               <Link href="/services" className="hover:text-gold-primary transition-colors">Services</Link>
               <Link href="/credit-video-analysis" className="hover:text-gold-primary transition-colors">Free Video Analysis</Link>
               <Link href="/schedule" className="hover:text-gold-primary transition-colors">Schedule</Link>
-              <Link href="/terms" className="hover:text-gold-primary transition-colors">Terms</Link>
-              <Link href="/refund" className="hover:text-gold-primary transition-colors">Refund/Cancellation</Link>
-              <Link href="/privacy" className="hover:text-gold-primary transition-colors">Privacy</Link>
+              <Link href="/about" className="hover:text-gold-primary transition-colors">About</Link>
             </div>
           </div>
 
+          {/* Legal */}
           <div className="space-y-6">
             <h4 className="text-white text-xs font-bold tracking-widest uppercase">Legal</h4>
-            <div className="font-inter text-sm text-text-muted leading-relaxed">
+            <div className="grid grid-cols-1 gap-3 font-inter text-sm text-text-secondary">
+              <Link href="/terms" className="hover:text-gold-primary transition-colors">Terms of Service</Link>
+              <Link href="/privacy" className="hover:text-gold-primary transition-colors">Privacy Policy</Link>
+              <Link href="/refund" className="hover:text-gold-primary transition-colors">Refund / Cancellation</Link>
+            </div>
+            <div className="font-inter text-sm text-text-muted leading-relaxed pt-2">
               <p>
-                Centaur Elite Consulting LLC provides financial education and consulting services.
-                Results vary. No guarantees.
+                Centaur Elite Consulting LLC provides financial education and consulting services. Results vary. No guarantees.
               </p>
             </div>
           </div>
 
+          {/* Social */}
           <div className="space-y-6">
             <h4 className="text-white text-xs font-bold tracking-widest uppercase">Connect</h4>
-            <p className="font-inter text-xs text-text-secondary italic">
-              “Follow the brand. Watch the results. Stay informed.”
-            </p>
-            <div className="flex items-center space-x-10 text-text-secondary">
+            <div className="flex items-center space-x-8 text-text-secondary">
               <a href="https://www.tiktok.com/@jaydthewealthycowboy" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="TikTok">
-                <Video size={32} />
+                <Video size={28} />
               </a>
               <a href="https://www.instagram.com/jaydthewealthycowboy?igsh=NG9nam16azd4bHVz&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="Instagram">
-                <Instagram size={32} />
+                <Instagram size={28} />
               </a>
               <a href="https://www.facebook.com/share/1Ab3vZoa3d/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="Facebook">
-                <Facebook size={32} />
+                <Facebook size={28} />
               </a>
               <a href="https://www.linkedin.com/in/jayd-%E2%80%9Cthe-wealthy-cowboy%E2%80%9D-franklin-6890883b0/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-primary transition-all hover:scale-110" aria-label="LinkedIn">
-                <Linkedin size={32} />
+                <Linkedin size={28} />
               </a>
             </div>
+            <p className="text-text-muted font-inter text-xs leading-relaxed">
+              Your information is never sold or shared. We take your privacy seriously.
+            </p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-text-muted uppercase tracking-[0.2em] font-inter">
-          <p>© {currentYear} CENTAUR ELITE CONSULTING LLC. ALL RIGHTS RESERVED.</p>
-          <p>BUILT FOR EXCELLENCE</p>
+          <p>&copy; {currentYear} CENTAUR ELITE CONSULTING LLC. ALL RIGHTS RESERVED.</p>
+          <p>JAYD THE WEALTHY COWBOY&trade;</p>
         </div>
       </div>
     </footer>

@@ -18,7 +18,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change / resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -29,7 +28,6 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -46,8 +44,7 @@ const Header = () => {
     { name: "Services", href: "/services" },
     { name: "Free Video Analysis", href: "/credit-video-analysis" },
     { name: "Schedule", href: "/schedule" },
-    { name: "Terms", href: "/terms" },
-    { name: "Privacy", href: "/privacy" },
+    { name: "About", href: "/about" },
   ];
 
   return (
@@ -61,16 +58,14 @@ const Header = () => {
         )}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Logo — smaller on mobile */}
           <Link href="/" className="flex items-center">
             <img
               src="/logo.PNG"
-              alt="JayD The Wealthy Cowboy™"
+              alt="JayD The Wealthy Cowboy\u2122"
               className="h-14 md:h-40 w-auto object-contain hover:opacity-80 transition-opacity"
             />
           </Link>
 
-          {/* Desktop nav links */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -83,14 +78,12 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA — hidden on mobile */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="primary" size="md" href="/schedule">
-              GET A FREE PHONE CONSULTATION
+              BOOK FREE CONSULTATION
             </Button>
           </div>
 
-          {/* Mobile hamburger button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden flex items-center justify-center w-10 h-10 text-white/80 hover:text-gold-primary transition-colors"
@@ -101,7 +94,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile menu panel — outside <header> so it's not trapped in its stacking context */}
       <div
         className={cn(
           "lg:hidden fixed inset-0 z-[60] transition-all duration-300",
@@ -111,12 +103,11 @@ const Header = () => {
         )}
         style={{ backgroundColor: "rgba(7, 6, 6, 0.97)" }}
       >
-        {/* Close button row */}
         <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-gold-primary/20">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <img
               src="/logo.PNG"
-              alt="JayD The Wealthy Cowboy™"
+              alt="JayD The Wealthy Cowboy\u2122"
               className="h-12 w-auto object-contain"
             />
           </Link>
@@ -149,7 +140,7 @@ const Header = () => {
               href="/schedule"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              GET A FREE PHONE CONSULTATION
+              BOOK FREE CONSULTATION
             </Button>
           </div>
         </nav>

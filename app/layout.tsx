@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import VisualEffects from "@/components/VisualEffects";
+import MobileStickyBar from "@/components/MobileStickyBar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,25 +24,25 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://JayDTheWealthyCowboy.ai"),
-  title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
-  description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+  title: "JayD The Wealthy Cowboy\u2122 | Credit Repair & Funding Strategy",
+  description: "Credit repair and funding strategy for people who want better approvals, cleaner profiles, and a clear path forward.",
   openGraph: {
-    title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
-    description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+    title: "JayD The Wealthy Cowboy\u2122 | Credit Repair & Funding Strategy",
+    description: "Credit repair and funding strategy for people who want better approvals, cleaner profiles, and a clear path forward.",
     images: [
       {
         url: "/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "JayD The Wealthy Cowboy™",
+        alt: "JayD The Wealthy Cowboy\u2122",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JayD The Wealthy Cowboy™ | Luxury Institutional Credit Authority",
-    description: "Generate high-volume consultation bookings with JayD The Wealthy Cowboy™. Expert credit consulting, funding strategies, and institutional capital access.",
+    title: "JayD The Wealthy Cowboy\u2122 | Credit Repair & Funding Strategy",
+    description: "Credit repair and funding strategy for people who want better approvals, cleaner profiles, and a clear path forward.",
     images: ["/og-image.jpeg"],
   },
   icons: {
@@ -69,7 +70,7 @@ export default function RootLayout({
         {/* TikTok Pixel Code End */}
       </head>
       <body
-        className={`${inter.variable} ${dmSans.variable} ${cinzel.variable} antialiased bg-depth-1 min-h-screen selection:bg-gold-primary/30 Selection:text-white`}
+        className={`${inter.variable} ${dmSans.variable} ${cinzel.variable} antialiased bg-depth-1 min-h-screen selection:bg-gold-primary/30 selection:text-white`}
       >
         <div className="bg-dimensional min-h-screen flex flex-col relative overflow-hidden">
           {/* Layer 1: Base Background */}
@@ -90,6 +91,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+
+        {/* Mobile Sticky CTA Bar */}
+        <MobileStickyBar />
       </body>
     </html>
   );

@@ -3,52 +3,53 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/Button";
 import { Section, Container } from "@/components/LayoutUtils";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Shield, Target, TrendingUp, Users } from "lucide-react";
 import { useState } from "react";
 
 // ── FAQ DATA ────────────────────────────────────────────────────────────────
 const faqs = [
   {
     q: "How fast can I see results?",
-    a: "Most clients see meaningful score movement within 30–90 days depending on their profile. Some see changes in the first 30 days. Results depend on the complexity of your file and how quickly bureaus respond to disputes."
+    a: "That depends on your starting profile, what is being challenged, and how quickly the bureaus or furnishers respond. Some people see movement faster than others. There are no guaranteed timelines."
   },
   {
-    q: "Is this legit? I've been scammed before.",
-    a: "That's exactly why I built this the way I did. No upfront promises I can't keep, no cookie-cutter letters, and no disappearing after you pay. I work with real client profiles and real strategy — and you'll see exactly what I see."
+    q: "Do you guarantee results?",
+    a: "No. No honest company should guarantee exact outcomes on a credit profile. What I can do is review the file, identify issues, build the right plan, and help position you better."
   },
   {
-    q: "Do I need to book a call to get started?",
-    a: "Nope. In fact, I built a free video analysis offer specifically so you don't have to. Submit your info, I review your profile, and I send you a personal video breakdown. No calendar link. No pressure."
+    q: "Is the free consultation really free?",
+    a: "Yes. The free consultation is a short review call to understand what is going on and point you toward the best next step."
+  },
+  {
+    q: "What is the free video analysis?",
+    a: "It is a personalized video review of your credit profile. I look at the file, explain what I see, and walk you through the next steps without making you sit through a call."
   },
   {
     q: "What if I have bankruptcies, collections, or charge-offs?",
-    a: "Those are exactly the types of items we target. Bankruptcies, collections, charge-offs, late payments, medical debt — these are all workable. The approach depends on your specific profile."
+    a: "That is common. The first step is to review the full file and see what is there, what is accurate, and what options make sense based on the overall profile."
   },
   {
-    q: "Will this hurt my credit score?",
-    a: "No. The dispute and removal process does not negatively impact your score. In most cases the removal of negative items leads to an immediate score increase."
+    q: "Who is this best for?",
+    a: "People who are serious about fixing their profile, improving approval odds, and putting themselves in a better position for funding."
   }
 ];
 
-// ── TESTIMONIALS ────────────────────────────────────────────────────────────
-const testimonials = [
+// ── RESULTS DATA ────────────────────────────────────────────────────────────
+const results = [
   {
-    name: "Michael",
-    result: "Mortgage-ready in 90 days",
-    quote: "I went from getting denied on everything to closing on my first home. JayD's team removed the items that were holding me back and rebuilt my profile from the ground up.",
-    increase: "+112 pts"
+    title: "Mortgage-ready in 90 days",
+    description: "Started with repeated denials and a weak profile. After cleanup and rebuilding, this client became mortgage-ready in about 90 days.",
+    stat: "+112 pts"
   },
   {
-    name: "Rachel",
-    result: "800 Club & $40K personal line",
-    quote: "I never thought I'd see an 800 score. After the full removal and build-out, I secured a $40K personal line of credit. This changed everything for me financially.",
-    increase: "+134 pts"
+    title: "800 score and $40K personal line",
+    description: "After removals and profile rebuilding, this client reached the 800 club and secured a $40K personal line.",
+    stat: "+134 pts"
   },
   {
-    name: "Arianna",
-    result: "$275K in 0% interest funding",
-    quote: "As a real estate investor I needed real capital. JayD positioned my profile correctly and I secured $275K at 0% interest — something I couldn't touch before.",
-    increase: "Funded"
+    title: "$275K in 0% interest funding",
+    description: "This client needed real capital and could not access it before. After the profile was positioned correctly, they secured $275K in 0% interest funding.",
+    stat: "Funded"
   }
 ];
 
@@ -81,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <Section className="pt-32 pb-48 relative overflow-hidden">
+      <Section className="pt-32 pb-40 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none opacity-80 [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_60%)]">
           <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover grayscale brightness-75">
             <source src="/0219.mp4" type="video/mp4" />
@@ -96,276 +97,322 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mb-16"
+            className="relative mb-14"
           >
-            {/* White cinematic backlight */}
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.07)_0%,transparent_70%)] blur-2xl scale-150 pointer-events-none" />
             <div className="absolute -inset-6 border border-gold-primary/20 rounded-full animate-pulse" />
             <div className="absolute -inset-2 border border-gold-primary/40 rounded-full" />
-            <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-gold-primary shadow-[0_0_60px_rgba(212,175,55,0.4),0_0_120px_rgba(255,255,255,0.06)]">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-gold-primary shadow-[0_0_60px_rgba(212,175,55,0.4),0_0_120px_rgba(255,255,255,0.06)]">
               <img src="/jayd-hero.JPG" alt="JayD The Wealthy Cowboy" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
             </div>
           </motion.div>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
+            {/* Eyebrow */}
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block"
+            >
+              CREDIT REPAIR + FUNDING STRATEGY
+            </motion.span>
+
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-7xl lg:text-8xl font-trajan text-white leading-[1.1] text-glow uppercase tracking-[0.2em]"
+              className="text-3xl md:text-5xl lg:text-6xl font-trajan text-white leading-[1.15] text-glow uppercase tracking-[0.15em]"
             >
-              HERE IN THE WEST,<br />
-              <span className="text-gold-primary relative inline-block group">
-                CREDIT IS POWER.
-                <span className="absolute inset-0 text-shimmer opacity-80 pointer-events-none">CREDIT IS POWER.</span>
-              </span>
+              Fix your credit profile<br />
+              and position yourself<br />
+              <span className="text-gold-primary">for real approvals.</span>
             </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl md:text-4xl font-trajan text-white/90 tracking-[0.15em] uppercase leading-tight"
-            >
-              YOU GET TO DECIDE<br />
-              HOW MUCH YOU HAVE.
-            </motion.h2>
-
-            {/* Updated body copy — pain-first, audience-focused */}
+            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              transition={{ duration: 1, delay: 0.3 }}
               className="font-inter text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
             >
-              If your score starts with a 4, 5, or 6 — or you keep getting denied — your credit profile is working against you.
-              I fix that. Clean it, build it, and position you for real approvals.
+              If your score starts with a 4, 5, or 6 — or you keep getting denied — I help you find what is hurting your file, clean it up, rebuild it the right way, and move toward better approvals and stronger funding options.
             </motion.p>
 
             {/* Dual CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4 justify-center"
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center"
             >
               <Button href="/schedule" variant="primary" size="lg">
-                GET A FREE PHONE CONSULTATION
+                BOOK FREE CONSULTATION
               </Button>
               <Button href="/credit-video-analysis" variant="gold" size="lg">
-                GET A FREE CREDIT VIDEO ANALYSIS
+                GET FREE VIDEO ANALYSIS
               </Button>
             </motion.div>
 
+            {/* Trust line */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 1, delay: 0.7 }}
               className="text-text-muted font-inter text-xs tracking-widest uppercase"
             >
-              No calls required · No pressure · Real results
+              No pressure. No guesswork. Real review.
             </motion.p>
           </div>
         </Container>
       </Section>
 
-      {/* ── SOCIAL PROOF BAR ───────────────────────────────────────────────── */}
-      <div className="border-y border-gold-primary/15 bg-depth-vignette py-8">
+      {/* ── PROOF STRIP ───────────────────────────────────────────────── */}
+      <div className="border-y border-gold-primary/15 bg-depth-vignette py-10">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { stat: "500+", label: "Clients Helped" },
-              { stat: "80–120+", label: "Avg. Points Per Bureau" },
-              { stat: "$275K", label: "Largest Single Funding" },
-              { stat: "90 days", label: "Avg. Time to Results" },
+              { stat: "80\u2013120+", label: "Point improvements seen by many clients" },
+              { stat: "$275K", label: "Largest single funding result shown on this site" },
+              { stat: "90 Days", label: "Average time to early visible progress for many clients" },
             ].map((item) => (
-              <div key={item.stat} className="space-y-1">
-                <p className="text-gold-primary font-trajan text-2xl md:text-3xl tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]">{item.stat}</p>
-                <p className="text-text-secondary font-inter text-xs uppercase tracking-widest">{item.label}</p>
+              <div key={item.stat} className="space-y-2">
+                <p className="text-gold-primary font-trajan text-2xl md:text-3xl tracking-wide">{item.stat}</p>
+                <p className="text-text-secondary font-inter text-xs leading-relaxed max-w-[180px] mx-auto">{item.label}</p>
               </div>
             ))}
           </div>
+          <p className="text-text-muted font-inter text-[10px] text-center mt-6 tracking-wide">
+            Results vary based on your starting profile, documentation, response timelines, and participation.
+          </p>
         </Container>
       </div>
 
-      {/* ── WHO THIS IS FOR ────────────────────────────────────────────────── */}
-      <Section className="py-20">
-        <Container className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="text-gold-primary text-xs font-bold tracking-[0.4em] uppercase block">This Is For You If...</span>
-              <h2 className="text-3xl md:text-4xl text-white leading-tight font-trajan tracking-widest uppercase">
-                SOUND FAMILIAR?
-              </h2>
-              <div className="w-24 h-px bg-gold-primary/50" />
-              <div className="space-y-4">
-                {[
-                  "You keep getting denied and don't know why",
-                  "Your score starts with a 4, 5, or 6",
-                  "You have collections, charge-offs, or late payments dragging you down",
-                  "You want real capital but can't access it",
-                  "You've tried disputing on your own and it didn't work",
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="flex items-start gap-4"
-                  >
-                    <div className="w-5 h-5 mt-0.5 flex-shrink-0 border border-gold-primary/40 flex items-center justify-center">
-                      <Check size={12} className="text-gold-primary" />
-                    </div>
-                    <p className="text-text-secondary font-inter text-sm leading-relaxed">{item}</p>
-                  </motion.div>
-                ))}
-              </div>
+      {/* ── IS THIS YOU? ────────────────────────────────────────────────── */}
+      <Section className="py-28">
+        <Container className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-10"
+          >
+            <h2 className="text-2xl md:text-4xl text-white leading-tight font-trajan tracking-widest">
+              If this sounds like you, you&apos;re in the right place.
+            </h2>
+            <div className="w-24 h-px bg-gold-primary/50 mx-auto" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+              {[
+                "You keep getting denied and do not fully know why",
+                "Your score starts with a 4, 5, or 6",
+                "Collections, charge-offs, or lates are holding you back",
+                "You want better approval odds and stronger funding options",
+                "You tried to fix it yourself and did not get far",
+                "You want a real plan, not more guesswork",
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="flex items-start gap-3"
+                >
+                  <div className="w-5 h-5 mt-0.5 flex-shrink-0 border border-gold-primary/40 flex items-center justify-center">
+                    <Check size={12} className="text-gold-primary" />
+                  </div>
+                  <p className="text-text-secondary font-inter text-sm leading-relaxed">{item}</p>
+                </motion.div>
+              ))}
             </div>
 
-            <div className="relative p-10 border border-gold-primary/20 bg-gold-primary/3 text-center space-y-6">
-              <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-gold-primary/40" />
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-gold-primary/40" />
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-gold-primary/40" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold-primary/40" />
-              <p className="text-gold-primary text-xs font-bold tracking-[0.4em] uppercase">Average After Our Services</p>
-              <p className="text-white/50 font-trajan text-xs tracking-widest uppercase">Credit Access Unlocked</p>
-              <p className="text-5xl md:text-6xl font-trajan text-gold-primary tracking-tight">$20K – $35K</p>
-              <div className="w-16 h-px bg-gold-primary/30 mx-auto" />
-              <p className="text-text-secondary font-inter text-xs leading-relaxed">
-                Results vary. Based on client history following full profile build-out and underwriting compliance.
-              </p>
-              <Button href="/credit-video-analysis" variant="gold" className="w-full text-xs py-3">
-                SEE WHERE YOUR PROFILE STANDS →
+            <div className="pt-4">
+              <Button href="/credit-video-analysis" variant="gold" size="lg">
+                SEE WHERE YOUR PROFILE STANDS
               </Button>
             </div>
-          </div>
+          </motion.div>
         </Container>
       </Section>
 
-      {/* ── STRATEGY + PERFORMANCE ─────────────────────────────────────────── */}
-      <Section className="relative border-y border-gold-primary/10 bg-depth-2/50 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.03)_0%,transparent_70%)] pointer-events-none" />
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-            <div className="space-y-16">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-trajan text-white tracking-widest uppercase italic">THE STRATEGY</h2>
-                <div className="w-24 h-1 bg-gold-primary/40" />
-              </div>
-              <div className="grid gap-6">
-                {["Expose what's wrong.", "Force compliance.", "Rebuild leverage.", "Return to the market approval-ready."].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="group flex items-center p-6 bg-white/2 border border-white/5 hover:border-gold-primary/40 transition-all duration-500 rounded-sm glassmorphic"
-                  >
-                    <div className="w-12 h-12 flex-shrink-0 border border-gold-primary/20 bg-gold-primary/5 flex items-center justify-center text-gold-primary mr-6 group-hover:bg-gold-primary group-hover:text-black transition-colors duration-500">
-                      <Check size={24} />
-                    </div>
-                    <span className="font-trajan text-xl text-white/90 tracking-widest uppercase group-hover:text-gold-primary transition-colors">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-16">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-trajan text-white tracking-widest uppercase italic">PROVEN PERFORMANCE</h2>
-                <div className="w-24 h-1 bg-gold-primary/40" />
-              </div>
-              <div className="space-y-8 font-inter">
-                {["80–120+ point increases per bureau", "Major derogatories removed", "From constant denials to funded approvals"].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: idx * 0.15 }}
-                    className="relative p-8 md:p-10 bg-gold-primary/2 border-l-4 border-gold-primary/60 backdrop-blur-md overflow-hidden group hover:border-gold-primary transition-all duration-700"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    <p className="relative text-xl md:text-2xl text-text-secondary leading-relaxed tracking-wide italic flex items-start">
-                      <span className="mr-4 text-gold-primary text-3xl leading-none mt-[-2px]">»</span>
-                      <span className="text-white group-hover:text-glow transition-all">{item}</span>
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* ── TESTIMONIALS ───────────────────────────────────────────────────── */}
-      <Section className="py-20" dark>
-        <Container className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-gold-primary text-xs font-bold tracking-[0.4em] uppercase block mb-4">Real Clients. Real Results.</span>
-            <h2 className="text-3xl md:text-4xl font-trajan text-white tracking-widest uppercase">WHAT HAPPENS AFTER</h2>
-            <div className="w-24 h-px bg-gold-primary/50 mx-auto mt-4" />
+      {/* ── HOW THIS WORKS ───────────────────────────────────────────── */}
+      <Section className="py-28" light>
+        <Container className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-trajan text-depth-1 tracking-widest uppercase mb-4">
+              How this works
+            </h2>
+            <div className="w-24 h-px bg-gold-primary/50 mx-auto mb-6" />
+            <p className="text-depth-3 font-inter text-base max-w-2xl mx-auto leading-relaxed">
+              A simple process built to find the problem, fix what can be fixed, and move you toward better approvals.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Review the full picture",
+                desc: "We look at your report, your negative items, your score factors, and the patterns that are holding you back."
+              },
+              {
+                step: "02",
+                title: "Build the game plan",
+                desc: "We identify what needs attention first, what can be challenged, and what needs to be rebuilt to strengthen your profile."
+              },
+              {
+                step: "03",
+                title: "Take action",
+                desc: "Depending on the path you choose, we guide the process, document the issues, and help move your profile in the right direction."
+              },
+              {
+                step: "04",
+                title: "Position for approvals",
+                desc: "Once the file is stronger, the goal is not just a cleaner report \u2014 it is better approval odds, better terms, and better funding opportunities."
+              },
+            ].map((item, idx) => (
               <motion.div
-                key={t.name}
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white rounded-sm border border-warm-cream p-8 shadow-sm"
+              >
+                <span className="text-gold-primary/40 font-trajan text-4xl font-bold leading-none block mb-4">
+                  {item.step}
+                </span>
+                <h3 className="text-depth-1 text-sm font-bold uppercase tracking-widest mb-3 !text-[13px]">
+                  {item.title}
+                </h3>
+                <p className="text-depth-3/80 font-inter text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-depth-3/60 font-inter text-xs text-center mt-10">
+            No real results happen without the right profile, the right follow-through, and realistic expectations.
+          </p>
+        </Container>
+      </Section>
+
+      {/* ── PROOF / RESULTS ──────────────────────────────────────────── */}
+      <Section className="py-28" dark>
+        <Container className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-trajan text-white tracking-widest uppercase mb-4">
+              Real results. Real movement.
+            </h2>
+            <div className="w-24 h-px bg-gold-primary/50 mx-auto mb-6" />
+            <p className="text-text-secondary font-inter text-base max-w-2xl mx-auto leading-relaxed">
+              People do not come here because they want fancy language. They come here because they want to stop getting denied and finally understand what to do next.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {results.map((r, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="group relative bg-depth-3 border border-white/5 p-8 hover:border-gold-primary/30 transition-all flex flex-col"
               >
                 <div className="absolute top-0 left-0 w-1 h-0 group-hover:h-full bg-gold-primary transition-all duration-500" />
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <p className="text-white font-inter font-semibold text-sm">{t.name}</p>
-                    <p className="text-text-muted font-inter text-xs tracking-widest uppercase mt-1">{t.result}</p>
-                  </div>
-                  <span className="text-gold-primary font-trajan text-lg font-bold">{t.increase}</span>
+                <div className="flex items-center justify-between mb-5">
+                  <h3 className="text-white font-inter font-semibold text-sm !normal-case !tracking-normal !leading-snug">{r.title}</h3>
+                  <span className="text-gold-primary font-trajan text-lg font-bold ml-3 flex-shrink-0">{r.stat}</span>
                 </div>
-                <p className="text-text-secondary font-inter text-sm leading-relaxed italic flex-grow">"{t.quote}"</p>
+                <p className="text-text-secondary font-inter text-sm leading-relaxed flex-grow">{r.description}</p>
               </motion.div>
             ))}
+          </div>
+
+          <p className="text-text-muted font-inter text-xs text-center mt-8">
+            Every file is different. Results vary. These examples are not a guarantee of what any individual will receive.
+          </p>
+        </Container>
+      </Section>
+
+      {/* ── FOUNDER TRUST BLOCK ──────────────────────────────────────── */}
+      <Section className="py-28">
+        <Container className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-3xl text-white leading-tight font-trajan tracking-widest uppercase">
+                Why people trust me with this
+              </h2>
+              <div className="w-24 h-px bg-gold-primary/50" />
+              <p className="text-text-secondary font-inter text-base leading-relaxed">
+                I built this brand for people who are tired of getting bad advice, vague answers, and fake promises.
+              </p>
+              <p className="text-text-secondary font-inter text-base leading-relaxed">
+                My job is to look at the file, tell the truth, find what is hurting it, and help build a stronger path forward.
+              </p>
+              <p className="text-text-secondary font-inter text-base leading-relaxed">
+                No fluff. No mystery. No pressure.<br />
+                Just a serious review and a real plan.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                { icon: Shield, label: "Clear answers" },
+                { icon: Target, label: "Serious strategy" },
+                { icon: TrendingUp, label: "Real review" },
+                { icon: Users, label: "Built for people who want results" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className="flex items-center gap-4 p-5 border border-white/5 hover:border-gold-primary/20 transition-colors"
+                >
+                  <item.icon size={20} className="text-gold-primary flex-shrink-0" />
+                  <span className="text-white font-inter text-sm font-medium">{item.label}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
 
-      {/* ── FREE VIDEO ANALYSIS FEATURE ────────────────────────────────────── */}
-      <Section className="py-20">
+      {/* ── FREE VIDEO ANALYSIS PROMO ────────────────────────────────── */}
+      <Section className="py-24" light>
         <Container className="max-w-4xl mx-auto">
-          <div className="relative border border-gold-primary/25 bg-gold-primary/3 p-10 md:p-16 text-center overflow-hidden">
-            <div className="absolute top-0 left-0 w-12 h-12 border-t border-l border-gold-primary/40" />
-            <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold-primary/40" />
-            <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-gold-primary/40" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b border-r border-gold-primary/40" />
-
+          <div className="relative border border-gold-primary/25 bg-white rounded-sm p-10 md:p-16 text-center overflow-hidden shadow-sm">
             <div className="relative z-10 space-y-6">
-              <span className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block">New — Zero Friction Offer</span>
-              <h2 className="text-3xl md:text-5xl font-trajan text-white tracking-widest uppercase leading-tight">
-                NOT READY TO BOOK A CALL?<br />
-                <span className="text-gold-primary">I'LL COME TO YOU.</span>
+              <span className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block">FREE REVIEW OPTION</span>
+              <h2 className="text-2xl md:text-4xl font-trajan text-depth-1 tracking-widest uppercase leading-tight">
+                Not ready to book a call?<br />
+                <span className="text-gold-primary">Start with a free video analysis.</span>
               </h2>
-              <p className="text-text-secondary font-inter text-base leading-relaxed max-w-2xl mx-auto">
-                Submit your credit monitoring info and I'll personally review your profile and record a custom video walking you through exactly what I see — your negatives, your opportunities, and your path to 700+.
+              <p className="text-depth-3/80 font-inter text-base leading-relaxed max-w-2xl mx-auto">
+                Submit your information and I will review your credit profile and send you a personalized video breakdown of what I see, what is hurting your file, and what direction makes the most sense from here.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
-                <div className="flex items-center gap-2 text-text-muted font-inter text-xs">
-                  <Check size={12} className="text-gold-primary" /> No booked call
+                <div className="flex items-center gap-2 text-depth-3/60 font-inter text-xs">
+                  <Check size={12} className="text-gold-primary" /> No booked call required
                 </div>
-                <div className="flex items-center gap-2 text-text-muted font-inter text-xs">
-                  <Check size={12} className="text-gold-primary" /> No sales pressure
+                <div className="flex items-center gap-2 text-depth-3/60 font-inter text-xs">
+                  <Check size={12} className="text-gold-primary" /> No pressure
                 </div>
-                <div className="flex items-center gap-2 text-text-muted font-inter text-xs">
+                <div className="flex items-center gap-2 text-depth-3/60 font-inter text-xs">
                   <Check size={12} className="text-gold-primary" /> Personalized to your profile
                 </div>
               </div>
               <div className="pt-4">
                 <Button href="/credit-video-analysis" variant="gold" size="lg">
-                  GET A FREE CREDIT VIDEO ANALYSIS
+                  GET FREE VIDEO ANALYSIS
                 </Button>
               </div>
             </div>
@@ -373,13 +420,12 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      <Section className="py-16" dark>
+      {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <Section className="py-24" dark>
         <Container className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-gold-primary text-xs font-bold tracking-[0.4em] uppercase block mb-4">Got Questions?</span>
-            <h2 className="text-3xl md:text-4xl font-trajan text-white tracking-widest uppercase">COMMON QUESTIONS</h2>
-            <div className="w-24 h-px bg-gold-primary/50 mx-auto mt-4" />
+            <h2 className="text-3xl md:text-4xl font-trajan text-white tracking-widest uppercase mb-4">Common questions</h2>
+            <div className="w-24 h-px bg-gold-primary/50 mx-auto" />
           </div>
           <div className="space-y-2">
             {faqs.map((faq) => (
@@ -389,19 +435,22 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── FINAL CTA ──────────────────────────────────────────────────────── */}
-      <Section className="pb-40">
+      {/* ── FINAL CTA ──────────────────────────────────────────────────── */}
+      <Section className="py-32 pb-40">
         <Container className="text-center">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl md:text-5xl text-white leading-tight font-trajan tracking-widest uppercase">
-              READY TO TAKE CONTROL<br />OF YOUR CREDIT?
+            <h2 className="text-2xl md:text-4xl text-white leading-tight font-trajan tracking-widest uppercase">
+              Ready to stop guessing and see where you really stand?
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-text-secondary font-inter text-base">
+              Choose the path that fits you best.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
               <Button href="/schedule" variant="primary" size="lg">
-                GET A FREE PHONE CONSULTATION
+                BOOK FREE CONSULTATION
               </Button>
               <Button href="/credit-video-analysis" variant="gold" size="lg">
-                GET A FREE CREDIT VIDEO ANALYSIS
+                GET FREE VIDEO ANALYSIS
               </Button>
             </div>
           </div>
