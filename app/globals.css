@@ -14,37 +14,29 @@
   --color-green-bright: #4ADE80;
   --color-green-light: #86EFAC;
 
-  --color-depth-1: #070606;
-  --color-depth-2: #090807;
-  --color-depth-3: #0F0D0C;
-  --color-depth-vignette: #141110;
+  --color-depth-1: #0A0908;
+  --color-depth-2: #0F0D0B;
+  --color-depth-3: #141210;
+  --color-depth-vignette: #181513;
 
-  --color-text-white: #FFFFFF;
-  --color-text-secondary: #9CA3AF;
-  --color-text-muted: #6B7280;
+  /* Warm whites and off-whites for light sections */
+  --color-warm-white: #FAF8F5;
+  --color-warm-ivory: #F5F0E8;
+  --color-warm-cream: #EDE8DF;
+
+  --color-text-white: #F9F7F4;
+  --color-text-secondary: #B8B3AA;
+  --color-text-muted: #7A756E;
 
   @keyframes metallic-flow {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   @keyframes drift {
-    from {
-      transform: translateX(-10%) translateY(0);
-    }
-
-    to {
-      transform: translateX(110%) translateY(-20px);
-    }
+    from { transform: translateX(-10%) translateY(0); }
+    to { transform: translateX(110%) translateY(-20px); }
   }
 
   --animate-metallic-flow: metallic-flow 3s ease infinite;
@@ -64,12 +56,7 @@
     overflow-x: hidden;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-trajan);
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
@@ -77,6 +64,11 @@
 
   h1 {
     letter-spacing: 0.35em !important;
+  }
+
+  /* Improved body copy line height */
+  p {
+    line-height: 1.75;
   }
 }
 
@@ -103,5 +95,18 @@
   .green-gradient {
     background: linear-gradient(to right, #22c55e, #4ade80, #86efac, #4ade80, #22c55e);
     background-size: 200% auto;
+  }
+
+  /* Light section backgrounds */
+  .bg-light-warm {
+    background-color: var(--color-warm-white);
+  }
+
+  .bg-light-ivory {
+    background-color: var(--color-warm-ivory);
+  }
+
+  .bg-light-cream {
+    background-color: var(--color-warm-cream);
   }
 }

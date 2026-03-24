@@ -1,24 +1,25 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 export const Section = ({
     children,
     className,
     id,
-    dark = false
+    dark = false,
+    light = false,
 }: {
     children: React.ReactNode;
     className?: string;
     id?: string;
     dark?: boolean;
+    light?: boolean;
 }) => (
     <section
         id={id}
         className={cn(
             "py-24 relative overflow-hidden",
-            dark ? "bg-depth-vignette" : "bg-transparent",
+            dark ? "bg-depth-vignette" : light ? "bg-light-warm" : "bg-transparent",
             className
         )}
     >
