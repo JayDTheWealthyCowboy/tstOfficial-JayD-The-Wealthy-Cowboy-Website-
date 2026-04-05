@@ -59,14 +59,14 @@ const fundingBusiness = [
   {
     title: "FUNDING CONSULTATION",
     subtitle: "$75 Evaluation",
-    bestFor: "People who want to know whether they are really in position for funding, what lenders are likely seeing, and what needs to change before they make another move.",
+    bestFor: "People who are looking to position themselves for their first $50,000 to $150,000 in funding and want to know what is helping or hurting their approval potential before they make another move.",
     bullets: [
       "Funding-readiness review",
       "Breakdown of weak spots in the profile",
       "Approval-positioning strategy",
       "Smarter direction before applying again",
     ],
-    benefit: "Start here if the goal is funding and you want to stop applying blind, clean up weak spots, and move with a stronger plan.",
+    benefit: "Start here if you are trying to position yourself for your first $50,000 to $150,000 in funding and want a clearer plan before you apply.",
     cta: "BOOK FUNDING CONSULTATION",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/AkWj",
