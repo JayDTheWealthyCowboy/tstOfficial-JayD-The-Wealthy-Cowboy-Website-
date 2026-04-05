@@ -73,13 +73,15 @@ const fundingBusiness = [
   },
   {
     title: "BUSINESS CREDIT & CAPITAL BLUEPRINT",
-    bestFor: "Business owners who want to position their company for stronger bank and lender approvals.",
+    subtitle: "$247.97 Strategic Business Review",
+    bestFor: "Business owners who want to know how their company looks to lenders, what is weakening their approval odds, and what needs to be strengthened before they go after capital.",
     bullets: [
       "Business profile review",
       "Funding roadmap",
       "Approval-focused recommendations",
+      "Direction on what to strengthen before applying",
     ],
-    benefit: "This is about building a business profile lenders take more seriously when it\u2019s time to go after capital.",
+    benefit: "Best for business owners who want to stop guessing, build a stronger business profile, and go after capital with a cleaner presentation.",
     cta: "BUILD YOUR BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/l5r55",
