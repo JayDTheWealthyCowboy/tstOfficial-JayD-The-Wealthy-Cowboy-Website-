@@ -145,11 +145,11 @@ export default function ReviewsPage() {
             CLIENT RESULTS
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
-            REAL CLIENTS. REAL MOVEMENT.<br />
-            <span className="text-gold-primary">SEE WHAT PEOPLE SAY.</span>
+            REAL CLIENT RESULTS.<br />
+            <span className="text-gold-primary">REAL PROOF.</span>
           </h1>
           <p className="text-text-secondary font-inter text-lg leading-relaxed max-w-2xl mx-auto">
-            Every profile is different. These are real client experiences — scores, deletions, and outcomes that reflect individual results based on each person&apos;s credit profile, reporting history, and participation.
+            These are real client experiences tied to real file movement. Every profile is different, and every result depends on the person, the reporting, and the work that goes into it.
           </p>
           <div className="w-24 h-px bg-gold-primary/50 mx-auto mt-8" />
         </Container>
@@ -163,7 +163,7 @@ export default function ReviewsPage() {
               SCORE PROGRESS
             </span>
             <h2 className="text-2xl md:text-3xl text-white tracking-widest uppercase mb-4">
-              Client score updates and dispute results
+              Score movement and file cleanup from real clients
             </h2>
             <div className="w-24 h-px bg-gold-primary/50 mx-auto" />
           </div>
@@ -228,54 +228,112 @@ export default function ReviewsPage() {
             </h2>
             <div className="w-24 h-px bg-gold-primary/50 mx-auto mb-6" />
             <p className="text-depth-3/80 font-inter text-sm max-w-2xl mx-auto leading-relaxed">
-              These are real account-level deletions verified through credit report updates. Each screenshot is paired with the client&apos;s own words about the experience.
+              These are specific account-level deletions pulled from real client updates, paired with the client&apos;s own reaction to seeing those items come off.
             </p>
           </div>
 
-          <div className="space-y-8">
-            {deletionProofs.map((t, idx) => (
-              <div
-                key={idx}
-                className="group bg-white border border-warm-cream rounded-sm shadow-sm overflow-hidden"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  {/* Screenshot */}
-                  <div className="w-full aspect-[4/3] md:aspect-auto bg-warm-ivory overflow-hidden border-b md:border-b-0 md:border-r border-warm-cream">
-                    <img
-                      src={t.image}
-                      alt={t.alt}
-                      className="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
+          <div className="space-y-12">
+            {/* Group 1: Jefferson Capital / Bank of America — shared screenshot */}
+            <div className="bg-white border border-warm-cream rounded-sm shadow-sm overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                {/* Screenshot */}
+                <div className="w-full bg-warm-ivory overflow-hidden border-b md:border-b-0 md:border-r border-warm-cream">
+                  <img
+                    src="/testimonials/testimonial-proof-jefferson-capital-bank-of-america.jpg"
+                    alt="Credit report screenshot showing Jefferson Capital and Bank of America marked deleted."
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
 
-                  {/* Content */}
-                  <div className="p-8 flex flex-col justify-center space-y-4">
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {t.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-muted border border-gold-primary/30 px-3 py-1"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Quote */}
-                    <blockquote className="text-depth-3/80 font-inter text-sm leading-relaxed">
-                      &ldquo;{t.quote}&rdquo;
-                    </blockquote>
-
-                    {/* Attribution */}
-                    <p className="text-depth-3/50 font-inter text-xs font-semibold tracking-widest uppercase">
-                      — {t.name}
-                    </p>
-                  </div>
+                {/* Grouped quotes */}
+                <div className="p-8 flex flex-col justify-center space-y-8">
+                  {deletionProofs
+                    .filter((t) => t.sharedImage === "jefferson-capital-boa")
+                    .map((t, idx) => (
+                      <div key={idx} className="space-y-3">
+                        <div className="flex flex-wrap gap-2">
+                          {t.tags.map((tag) => (
+                            <span key={tag} className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-muted border border-gold-primary/30 px-3 py-1">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <blockquote className="text-depth-3/80 font-inter text-sm leading-relaxed">
+                          &ldquo;{t.quote}&rdquo;
+                        </blockquote>
+                        <p className="text-depth-3/50 font-inter text-xs font-semibold tracking-widest uppercase">
+                          — {t.name}
+                        </p>
+                        {idx === 0 && <div className="w-full h-px bg-warm-cream" />}
+                      </div>
+                    ))}
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Group 2: Caine Weiner — standalone */}
+            {deletionProofs
+              .filter((t) => t.sharedImage === "caine-weiner")
+              .map((t, idx) => (
+                <div key={idx} className="bg-white border border-warm-cream rounded-sm shadow-sm overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div className="w-full bg-warm-ivory overflow-hidden border-b md:border-b-0 md:border-r border-warm-cream">
+                      <img src={t.image} alt={t.alt} className="w-full h-full object-cover object-center" loading="lazy" />
+                    </div>
+                    <div className="p-8 flex flex-col justify-center space-y-4">
+                      <div className="flex flex-wrap gap-2">
+                        {t.tags.map((tag) => (
+                          <span key={tag} className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-muted border border-gold-primary/30 px-3 py-1">{tag}</span>
+                        ))}
+                      </div>
+                      <blockquote className="text-depth-3/80 font-inter text-sm leading-relaxed">
+                        &ldquo;{t.quote}&rdquo;
+                      </blockquote>
+                      <p className="text-depth-3/50 font-inter text-xs font-semibold tracking-widest uppercase">— {t.name}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+            {/* Group 3: Acima Digital / Bankruptcy / Affirm — shared screenshot */}
+            <div className="bg-white border border-warm-cream rounded-sm shadow-sm overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                {/* Screenshot */}
+                <div className="w-full bg-warm-ivory overflow-hidden border-b md:border-b-0 md:border-r border-warm-cream">
+                  <img
+                    src="/testimonials/testimonial-proof-acima-affirm-bankruptcy.jpg"
+                    alt="Credit report screenshot showing Acima Digital, Affirm, and Bankruptcy marked deleted."
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Grouped quotes */}
+                <div className="p-8 flex flex-col justify-center space-y-8">
+                  {deletionProofs
+                    .filter((t) => t.sharedImage === "acima-affirm-bankruptcy")
+                    .map((t, idx, arr) => (
+                      <div key={idx} className="space-y-3">
+                        <div className="flex flex-wrap gap-2">
+                          {t.tags.map((tag) => (
+                            <span key={tag} className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-muted border border-gold-primary/30 px-3 py-1">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <blockquote className="text-depth-3/80 font-inter text-sm leading-relaxed">
+                          &ldquo;{t.quote}&rdquo;
+                        </blockquote>
+                        <p className="text-depth-3/50 font-inter text-xs font-semibold tracking-widest uppercase">
+                          — {t.name}
+                        </p>
+                        {idx < arr.length - 1 && <div className="w-full h-px bg-warm-cream" />}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>

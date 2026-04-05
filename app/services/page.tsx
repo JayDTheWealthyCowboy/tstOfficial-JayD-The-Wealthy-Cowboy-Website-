@@ -19,21 +19,21 @@ const personalCredit = [
       "Basic review of visible negative issues",
       "Direction on the best next step",
     ],
-    benefit: "Low-friction starting point. Find out what is blocking your progress before spending anything.",
+    benefit: "Best place to start if you want real answers before you spend money on the wrong thing.",
     cta: "BOOK FREE CONSULTATION",
     variant: "primary" as const,
     href: "/schedule",
   },
   {
-    title: "PRO CREDIT CONSULTATION",
-    subtitle: "$47 Credit Blueprint",
+    title: "$47 CREDIT BLUEPRINT",
+    subtitle: undefined,
     bestFor: "People who want a deeper breakdown of what is possible and what needs to change.",
     bullets: [
       "30-minute strategic review",
       "Personalized rebuild direction",
       "Realistic discussion of next steps",
     ],
-    benefit: "Stop guessing. Get a tailored plan that is stronger than generic free advice and built around your actual file.",
+    benefit: "If you want to stop guessing and see what the real play is for your file, this is where to start.",
     cta: "GET THE BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/xkxBB",
@@ -46,7 +46,7 @@ const personalCredit = [
       "Built around your report",
       "Designed for a more serious challenge process",
     ],
-    benefit: "A stronger dispute approach than templates you find online — built specifically for what is on your file.",
+    benefit: "Built for people who want a stronger dispute approach than the weak templates floating around online.",
     cta: "ORDER DIY PACK",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/VOJ0O",
@@ -55,15 +55,15 @@ const personalCredit = [
 
 const fundingBusiness = [
   {
-    title: "ELITE FUNDING EVALUATION",
-    subtitle: "$97 Funding Blueprint",
+    title: "$97 FUNDING BLUEPRINT",
+    subtitle: undefined,
     bestFor: "Serious people preparing for capital access who want to know where they stand before applying.",
     bullets: [
       "Funding-readiness review",
       "Approval positioning strategy",
       "Smarter application direction",
     ],
-    benefit: "Stop applying blind. Get positioned properly so lenders see a stronger applicant — not just a higher score.",
+    benefit: "If funding is the goal, this helps you stop applying blind and start moving with a stronger position.",
     cta: "GET THE FUNDING BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/AkWj",
@@ -76,7 +76,7 @@ const fundingBusiness = [
       "Funding roadmap",
       "Approval-focused recommendations",
     ],
-    benefit: "Build business credibility that lenders take seriously. Not just a score — real positioning for real capital.",
+    benefit: "This is about building a business profile lenders take more seriously when it\u2019s time to go after capital.",
     cta: "BUILD YOUR BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/l5r55",
@@ -92,7 +92,7 @@ const advancedSpecialty = [
       "Built to strengthen business presentation",
       "Designed for serious buyers only",
     ],
-    benefit: "A business credibility and presentation tool — not a shortcut, but a positioning advantage for the right buyer.",
+    benefit: "Not a magic fix. A positioning tool for the right buyer who wants a stronger business presentation.",
     cta: "SECURE SHELF COMPANY",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/Z8pZ5",
@@ -105,7 +105,7 @@ const advancedSpecialty = [
       "Structured response support",
       "Built to help you respond correctly and fast",
     ],
-    benefit: "When a collector comes with paperwork, you need to respond with the right documentation — not panic.",
+    benefit: "When paperwork shows up, you need the right response \u2014 not panic, not guessing, and not bad moves.",
     cta: "ORDER DEFENSE DOCS",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/68L67",
@@ -245,7 +245,7 @@ export default function ServicesPage() {
           </p>
           <div className="w-16 h-px bg-gold-primary/20 mx-auto" />
           <p className="text-text-muted font-inter text-xs leading-relaxed">
-            We focus on real issues, real documentation, and the right next steps. Not every profile needs the same solution.
+            Every file is different. The right move depends on what is actually on the report, what the goal is, and what makes sense for that person.
           </p>
           <div className="pt-2">
             <Link href="/reviews" className="inline-flex items-center gap-2 text-gold-primary font-inter text-sm font-semibold tracking-widest uppercase hover:text-gold-bright transition-colors">

@@ -116,7 +116,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block"
             >
-              CREDIT CONSULTING + FUNDING STRATEGY
+              CREDIT + APPROVAL STRATEGY
             </motion.span>
 
             {/* Headline */}
@@ -126,9 +126,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="text-3xl md:text-5xl lg:text-6xl font-trajan text-white leading-[1.15] text-glow uppercase tracking-[0.15em]"
             >
-              Stop guessing.<br />
-              Get positioned<br />
-              <span className="text-gold-primary">before you apply.</span>
+              Clean up what&apos;s holding you back<br />
+              <span className="text-gold-primary">before you apply again.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -138,7 +137,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.3 }}
               className="font-inter text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
             >
-              Credit consulting, funding positioning, and approval-readiness strategy for entrepreneurs, homebuyers, and serious consumers who want a cleaner file and a stronger path forward.
+              For homebuyers, business owners, and serious people who are tired of denials, tired of guessing, and ready to fix what&apos;s holding their file back before they make another move.
             </motion.p>
 
             {/* Dual CTA */}
@@ -257,23 +256,23 @@ export default function Home() {
             {[
               {
                 step: "01",
-                title: "Book or submit",
-                desc: "Start with a free consultation or submit your information for a free credit video analysis. No commitment required."
+                title: "Start here",
+                desc: "Book a consultation or send over your file so I can see what\u2019s really going on before you waste more time making the wrong move."
               },
               {
                 step: "02",
-                title: "Full profile review",
-                desc: "I review your credit report — negative items, score factors, inaccuracies, and the patterns that are holding you back from approvals."
+                title: "I review the file",
+                desc: "I look at the negative items, the patterns, the weak spots, and what is actually keeping you from stronger approvals."
               },
               {
                 step: "03",
-                title: "Get your strategy",
-                desc: "You receive a clear breakdown of the problems, a realistic plan for what can be addressed, and direction on which service fits your situation."
+                title: "You get the game plan",
+                desc: "You get a clear breakdown of what needs attention, what can be challenged, and what path makes the most sense for your situation."
               },
               {
                 step: "04",
-                title: "Move forward",
-                desc: "Choose the right service path — from a tailored blueprint to full done-for-you consulting — and start building toward stronger approvals and funding readiness."
+                title: "Move the right way",
+                desc: "Then you move forward the right way \u2014 not with guesswork, not with hype, but with a plan built around your file and your goals."
               },
             ].map((item, idx) => (
               <motion.div
@@ -361,10 +360,10 @@ export default function Home() {
                 I built this brand for people who are tired of getting bad advice, vague answers, and fake promises.
               </p>
               <p className="text-text-secondary font-inter text-base leading-relaxed">
-                My job is to look at the file, tell the truth, find what is hurting it, and help build a stronger path forward. If there is nothing worth fixing, I will tell you that too.
+                My job is to look at the file, tell you the truth, find what is hurting it, and help you build a stronger path forward. If there&apos;s nothing worth fixing, I&apos;ll tell you that too.
               </p>
               <p className="text-text-secondary font-inter text-base leading-relaxed">
-                The goal is to identify what is actually holding you back before you keep making moves. Not every profile needs the same solution — and not every profile needs every service.
+                The goal is simple: figure out what&apos;s really holding you back before you keep applying, spending money, or making moves that don&apos;t help you.
               </p>
               <p className="text-text-secondary font-inter text-base leading-relaxed">
                 No fluff. No mystery. No pressure.<br />

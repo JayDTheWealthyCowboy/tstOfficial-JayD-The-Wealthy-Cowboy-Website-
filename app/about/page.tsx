@@ -49,13 +49,13 @@ export default function AboutPage() {
               </h2>
               <div className="w-16 h-px bg-gold-primary/50" />
               <p className="text-depth-3/80 font-inter text-base leading-relaxed">
-                JayD The Wealthy Cowboy was built for people who are tired of confusion, tired of denials, and tired of getting sold before they get real answers.
+                I built this brand for people who are tired of getting denied, tired of bad advice, and tired of being sold before anybody even tells them the truth.
               </p>
               <p className="text-depth-3/80 font-inter text-base leading-relaxed">
-                This is not generic credit repair. This is credit consulting, approval positioning, and funding strategy built around what lenders actually look at — not what sounds good on a sales page.
+                This is not generic credit repair. This is about finding what&apos;s really hurting the file, cleaning up what can be cleaned up, and getting you positioned better for approvals and funding.
               </p>
               <p className="text-depth-3/80 font-inter text-base leading-relaxed">
-                The goal is straightforward: review the file, tell the truth, build the right path, and help position serious people for better outcomes. If there is nothing worth fixing, you will hear that too.
+                The goal is straightforward: review the file, tell the truth, build the right path, and help serious people make stronger moves. If there&apos;s nothing worth fixing, you&apos;ll hear that too.
               </p>
             </div>
           </div>
@@ -75,20 +75,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: "Strategy, not just disputes",
-                desc: "Most companies file the same template disputes for every client. This brand focuses on identifying what is actually hurting the file and building the right plan around it — not running a script.",
+                title: "More than generic disputes",
+                desc: "Most companies run the same play on everybody. I don\u2019t. The file gets looked at for what it actually is, and the strategy gets built from there.",
               },
               {
                 title: "Approval-focused, not score-obsessed",
-                desc: "A higher score is part of the picture, but approvals depend on more than a number. The focus here is on positioning the full profile so lenders see a stronger applicant.",
+                desc: "A score matters, but it\u2019s not the whole story. The real goal is getting the full profile into a stronger position for approvals.",
               },
               {
                 title: "Built for serious people",
-                desc: "This is for entrepreneurs, homebuyers, business owners, and consumers who want real movement — not people shopping for the cheapest option. Premium help for people who want premium results.",
+                desc: "This is for serious people who want real movement \u2014 not cheap fixes, recycled advice, or somebody telling them what sounds good.",
               },
               {
                 title: "Honest about what is possible",
-                desc: "No guarantees. No fake timelines. No inflated promises. Every file is reviewed individually, and the strategy is built around what is realistic for that specific profile.",
+                desc: "No fake promises. No made-up timelines. No telling you what you want to hear just to get your money.",
               },
             ].map((item, idx) => (
               <div
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </h2>
               <div className="w-16 h-px bg-gold-primary/50" />
               <p className="text-depth-3/80 font-inter text-base leading-relaxed">
-                This brand serves people who are serious about their financial positioning and want clear, practical help — not motivational fluff or recycled advice.
+                This is for people who are serious about cleaning up the file, getting positioned better, and making smarter moves with their credit and funding.
               </p>
             </div>
 
@@ -149,10 +149,10 @@ export default function AboutPage() {
           </h2>
           <div className="w-24 h-px bg-gold-primary/50 mx-auto" />
           <p className="text-text-secondary font-inter text-base leading-relaxed">
-            JayD The Wealthy Cowboy™ is a registered brand of Centaur Elite Consulting LLC. The brand was built around one idea: serious people deserve serious help with their credit, their funding positioning, and their financial presentation.
+            This brand was built for people who are tired of getting denied, tired of bad advice, and tired of wasting time on the wrong moves.
           </p>
           <p className="text-text-secondary font-inter text-base leading-relaxed">
-            Every service — from the free consultation to the Gold Tier package — is designed to give clients clarity, strategy, and a real path forward. Not empty promises.
+            The whole point is simple: find what&apos;s hurting the file, fix what can be fixed, and build a stronger path forward without the fake promises.
           </p>
           <div className="pt-4">
             <Link href="/reviews" className="inline-flex items-center gap-2 text-gold-primary font-inter text-sm font-semibold tracking-widest uppercase hover:text-gold-bright transition-colors">
