@@ -58,7 +58,7 @@ const personalCredit = [
 const fundingBusiness = [
   {
     title: "FUNDING CONSULTATION",
-    subtitle: "$197 Funding Blueprint",
+    subtitle: "$75 Evaluation",
     bestFor: "People who want to know whether they are really in position for funding, what lenders are likely seeing, and what needs to change before they make another move.",
     bullets: [
       "Funding-readiness review",
