@@ -57,16 +57,17 @@ const personalCredit = [
 
 const fundingBusiness = [
   {
-    title: "$97 FUNDING BLUEPRINT",
-    subtitle: undefined,
-    bestFor: "Serious people preparing for capital access who want to know where they stand before applying.",
+    title: "FUNDING CONSULTATION",
+    subtitle: "$197 Funding Blueprint",
+    bestFor: "People who want to know whether they are really in position for funding, what lenders are likely seeing, and what needs to change before they make another move.",
     bullets: [
       "Funding-readiness review",
-      "Approval positioning strategy",
-      "Smarter application direction",
+      "Breakdown of weak spots in the profile",
+      "Approval-positioning strategy",
+      "Smarter direction before applying again",
     ],
-    benefit: "If funding is the goal, this helps you stop applying blind and start moving with a stronger position.",
-    cta: "GET THE FUNDING BLUEPRINT",
+    benefit: "Start here if the goal is funding and you want to stop applying blind, clean up weak spots, and move with a stronger plan.",
+    cta: "BOOK FUNDING CONSULTATION",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/AkWj",
   },
