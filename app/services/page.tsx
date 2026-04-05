@@ -58,15 +58,15 @@ const personalCredit = [
 const fundingBusiness = [
   {
     title: "FUNDING CONSULTATION",
-    subtitle: "$75 Evaluation",
-    bestFor: "People who are looking to position themselves for their first $50,000 to $150,000 in funding and want to know what is helping or hurting their approval potential before they make another move.",
+    subtitle: "$75 Consultation",
+    bestFor: "People who believe they are ready to pursue funding and want their profile reviewed to determine whether they meet the requirements to move into our done-for-you funding sequence.",
     bullets: [
-      "Funding-readiness review",
-      "Breakdown of weak spots in the profile",
-      "Approval-positioning strategy",
-      "Smarter direction before applying again",
+      "Review of personal credit, business credit, and overall structure",
+      "Funding sequence based on business type, geography, and target limits",
+      "Acceptance review based on profile and documentation",
+      "Immediate next steps into the funding cycle if approved",
     ],
-    benefit: "Start here if you are trying to position yourself for your first $50,000 to $150,000 in funding and want a clearer plan before you apply.",
+    benefit: "Start here if you believe you are ready for funding and want a direct path into a done-for-you funding sequence once your profile meets our requirements.",
     cta: "BOOK FUNDING CONSULTATION",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/AkWj",
